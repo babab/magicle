@@ -1,0 +1,60 @@
+##################
+Magicle Playground
+##################
+
+Select one or more lines in VISUAL LINE mode and type :!magicle <Enter>. You
+can shorten this by pressing only <enter> to pass it to magicle by placing
+this in your .vimrc::
+
+    " Use <Return> in VISUAL (LINE) mode to pass to magic line editor
+    vnoremap <silent> <Return> :!magicle<CR>
+
+**Try it out in the rest of this document.**
+
+function: bumpCopyrightYear
+***************************
+
+.. info::
+
+   Here you can bump the year of a copyright header. It will only bump from
+   the previous year. That means only the first two headers will be changed
+   when passed to Magicle:
+
+# Copyright (c) 2014-2015  Author Name <author-name@example.com>
+# Copyright (c) 2015  Author Name <author-name@example.com>
+# Copyright (c) 2014  Author Name <author-name@example.com>
+# Copyright (c) 2016  Author Name <author-name@example.com>
+
+
+function: reStructuredTextHeader
+********************************
+
+.. info::
+
+    Here you can create headers in reStructuredText by simply starting the
+    line with `::h[1-6]`.
+
+::h1 These are headers
+::h2 Magicle expands these to ReStructuredText format
+::h3 This is a heading 3
+::h4 This is a heading 4
+::h5 This is a heading 5
+::h6 This is a heading 6
+
+
+function: textwrap
+******************
+
+This is a long paragraph of text, you can wrap it so it will be divided into lines with a maximum length of 78 chars. bacon ipsum dolor amet chicken alcatra turducken bacon kevin fatback leberkas short ribs bresaola frankfurter. ribeye drumstick chuck strip steak pancetta. pork chop cow shankle biltong tri-tip tongue porchetta. fatback jowl swine flank frankfurter. beef ribs pig pork chop cupim tenderloin.
+
+# This is a paragraph in code comment used in many scripting languages, you can wrap it so it will be divided into lines with a maximum length of 78 chars.
+# it will then try to apply the same code commenting on line content that are longer lnd that are placed on repeating lines.
+
+// This is a paragraph in an inline comment used in many programming languages, you can wrap it so it will be divided into lines with a maximum length of 78 chars.
+
+/**
+ * This is a paragraph in a block comment used in many programming languages, you can wrap it so it will be divided into lines with a maximum length of 78 chars.
+ * It will then try to apply the same code commenting on line content that are longer lnd that are placed on repeating lines.
+ */
+
+" This is a paragraph in a code comment used in vim script / VimL, you can wrap it so it will be divided into lines with a maximum length of 78 chars.
